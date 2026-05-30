@@ -1,7 +1,7 @@
 runpod
 torch>=2.2.0
 transformers
-diffusers>=0.29.0
+git+https://github.com/huggingface/diffusers.git
 accelerate
 imageio[ffmpeg]
 imageio-ffmpeg

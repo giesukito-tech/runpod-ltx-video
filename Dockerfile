@@ -1,5 +1,5 @@
 # Sử dụng bản build chuẩn từ NVIDIA có sẵn CUDA 12.1 và Ubuntu xịn
-FROM nvidia/cuda:12.1.1-runtime-ubuntu22.04
+FROM nvidia/cuda:11.8.0-runtime-ubuntu22.04
 
 # Cài đặt Python, FFMPEG hệ thống và các công cụ nền để xử lý video
 RUN apt-get update && apt-get install -y \

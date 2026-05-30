@@ -2,7 +2,14 @@ import runpod
 import torch
 import os
 import base64
-from diffusers import LTXVideoPipeline
+
+# Bọc lót an toàn tuyệt đối để xử lý dứt điểm lỗi ImportError
+try:
+    from diffusers import LTXVideoPipeline
+except ImportError:
+    print("⚠️  [Cảnh báo] Không tìm thấy LTXVideoPipeline ở package tổng, tiến hành nạp trực tiếp từ module con...")
+    from diffusers.pipelines.ltx_video.pipeline_ltx_video import LTXVideoPipeline
+
 from diffusers.utils import export_to_video
 
 # Biến toàn cục để giữ Model trong bộ nhớ VRAM (Phục vụ cho các lượt gọi Hot Start tiếp theo)
